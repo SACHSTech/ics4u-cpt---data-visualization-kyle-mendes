@@ -41,7 +41,7 @@ public class Movies {
         this.genre = genre;
     }
 
-    public String getrating() {
+    public String getRating() {
         return rating;
     }
 
