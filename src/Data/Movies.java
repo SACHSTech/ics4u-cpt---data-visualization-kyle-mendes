@@ -6,63 +6,39 @@ public class Movies {
     private String genre;
     private String rating; 
     private int totalgross; 
-    private int adjustedgross;
+    private long adjustedgross;
 
-    public Movies(String name, String date, String genre, String rating, int totalgross, int adjustedgross){
-        this.name = name;
-        this.date = date;
-        this.genre = genre;
-        this.rating = rating;
-        this.totalgross = totalgross;
-        this.adjustedgross = adjustedgross;
+    public Movies(String thename, String thedate, String thegenre, String therating, int thetotalgross, long theadjustedgross){
+        this.name = thename;
+        this.date = thedate;
+        this.genre = thegenre;
+        this.rating = therating;
+        this.totalgross = thetotalgross;
+        this.adjustedgross = theadjustedgross;
     
     }
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getDate() {
         return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
     }
 
     public String getGenre() {
         return genre;
     }
 
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-
     public String getRating() {
         return rating;
-    }
-
-    public void setRating(String rating ) {
-        this.rating = rating;
     }
 
     public int getTotalgross() {
         return totalgross;
     }
 
-    public void setTotalgross(int totalgross ) {
-        this.totalgross = totalgross;
-    }
-
-    public int getAdjustedgross() {
+    public long getAdjustedgross() {
         return adjustedgross;
-    }
-
-    public void setAdjustedgross(int adjustedgross) {
-        this.adjustedgross = adjustedgross;
     }
 
     public String toString() {

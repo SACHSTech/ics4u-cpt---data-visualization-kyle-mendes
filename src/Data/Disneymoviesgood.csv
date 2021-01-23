@@ -1,4 +1,3 @@
-movie_title,release_date,genre,mpaa_rating,total_gross,inflation_adjusted_gross
 Snow White and the Seven Dwarfs,21/12/1937,Musical,G,184925485,5228953251
 Pinocchio,09/02/1940,Adventure,G,84300000,2188229052
 Fantasia,13/11/1940,Musical,G,83320000,2187090808
@@ -28,7 +27,7 @@ Beaches,21/12/1988,Drama,PG-13,57041866,120381757
 Three Fugitives,27/01/1989,Comedy,PG-13,40590000,85757817
 New York Stories,01/03/1989,Drama,PG,10763469,22740861
 Dead Poets Society,02/06/1989,Drama,PG,95860116,202531517
-"Honey, I Shrunk the Kids",23/06/1989,Adventure,PG,130724172,276191669
+Honey I Shrunk the Kids,23/06/1989,Adventure,PG,130724172,276191669
 Turner & Hooch,28/07/1989,Comedy,PG,71079915,150176361
 An Innocent Man,06/10/1989,Drama,R,19397847,40983414
 Gross Anatomy,20/10/1989,Drama,PG-13,11346186,23972012
@@ -220,7 +219,7 @@ An Alan Smithee Film: Burn Hollywood …,27/02/1998,Comedy,R,45779,82277
 Meet the Deedles,27/03/1998,Comedy,PG,4356126,7829877
 He Got Game,01/05/1998,Drama,R,21567853,38766948
 The Horse Whisperer,15/05/1998,Drama,PG-13,75383563,135497531
-"Six Days, Seven Nights",12/06/1998,Romantic Comedy,PG-13,74339294,133620516
+Six Days Seven Nights,12/06/1998,Romantic Comedy,PG-13,74339294,133620516
 Mulan,19/06/1998,Adventure,G,120620254,216807832
 Armageddon,01/07/1998,Adventure,PG-13,201578182,362324957
 Jane Austen's Mafia,24/07/1998,Comedy,PG-13,19843795,35668055
@@ -248,7 +247,7 @@ The Sixth Sense,06/08/1999,Thriller/Suspense,PG-13,293506292,485424724
 The 13th Warrior,27/08/1999,Action,R,32698899,54262148
 Breakfast of Champions,17/09/1999,Comedy,R,178287,295851
 Mumford,24/09/1999,Comedy,R,4559569,7566363
-"Mystery, Alaska",01/10/1999,Comedy,R,8891623,14755189
+Mystery Alaska,01/10/1999,Comedy,R,8891623,14755189
 The Straight Story,15/10/1999,Drama,G,6197866,10111144
 The Insider,05/11/1999,Drama,R,28965197,47794214
 Toy Story 2,19/11/1999,Adventure,G,245852179,404450426
@@ -274,7 +273,7 @@ Remember the Titans,29/09/2000,Drama,PG,115654751,180742479
 Unbreakable,22/11/2000,Thriller/Suspense,PG-13,94999143,148208901
 102 Dalmatians,22/11/2000,Comedy,G,66941559,104055039
 The Emperor's New Groove,15/12/2000,Adventure,G,89296573,136789252
-"O Brother, Where Art Thou?",22/12/2000,Comedy,PG-13,45506619,67922002
+O Brother Where Art Thou?,22/12/2000,Comedy,PG-13,45506619,67922002
 Double Take,12/01/2001,Action,PG-13,29823162,44418589
 Recess: School's Out,16/02/2001,Comedy,G,36696761,54656124
 Just Visiting,06/04/2001,Comedy,PG-13,4777007,7114869
@@ -285,7 +284,7 @@ The Princess Diaries,03/08/2001,Comedy,G,108244774,161218928
 Bubble Boy,24/08/2001,Comedy,PG-13,5002310,7450434
 Max Keeble's Big Move,05/10/2001,Comedy,PG,17292381,25749730
 Corky Romano,12/10/2001,Comedy,PG-13,23978402,35705805
-"Monsters, Inc.",02/11/2001,Adventure,G,289423425,416073179
+Monsters Inc.,02/11/2001,Adventure,G,289423425,416073179
 Out Cold,21/11/2001,Comedy,PG-13,13906394,20700691
 The Royal Tenenbaums,14/12/2001,Black Comedy,R,52353636,76758193
 Beauty and the Beast (IMAX),01/01/2002,Musical,G,25487028,36980311
@@ -362,7 +361,7 @@ Flightplan,23/09/2005,Thriller/Suspense,PG-13,89706988,117960425
 The Greatest Game Ever Played,30/09/2005,Drama,PG,15331289,20162672
 Shopgirl,21/10/2005,Drama,R,10284523,13519621
 Chicken Little,04/11/2005,Adventure,G,135386665,177954661
-"The Chronicles of Narnia: The Lion, t…",09/12/2005,Adventure,PG,291710957,381557539
+The Chronicles of Narnia: The Lion t…,09/12/2005,Adventure,PG,291710957,381557539
 Casanova,25/12/2005,Drama,R,11304403,14574087
 Glory Road,13/01/2006,Drama,PG,42647449,54888236
 Annapolis,27/01/2006,Drama,PG-13,17127992,22044113
@@ -484,11 +483,11 @@ Maleficent,30/05/2014,Adventure,PG,241407328,249089809
 Planes: Fire and Rescue,18/07/2014,Adventure,PG,59157732,61040349
 Guardians of the Galaxy,01/08/2014,Adventure,PG-13,333172112,343771168
 The Hundred-Foot Journey,08/08/2014,Romantic Comedy,PG,54235441,55961409
-"Alexander and the Terrible, Horrible,…",10/10/2014,Comedy,PG,66954149,69055550
+Alexander and the Terrible Horrible…,10/10/2014,Comedy,PG,66954149,69055550
 Big Hero 6,07/11/2014,Adventure,PG,222527828,229249222
 Into the Woods,25/12/2014,Musical,PG,128002372,130894237
 Strange Magic,23/01/2015,Adventure,PG,12429583,12429583
-"McFarland, USA",20/02/2015,Drama,PG,44480275,44480275
+McFarland USA,20/02/2015,Drama,PG,44480275,44480275
 Cinderella,13/03/2015,Drama,PG,201151353,201151353
 Monkey Kingdom,17/04/2015,Documentary,G,16432322,16432322
 Avengers: Age of Ultron,01/05/2015,Action,PG-13,459005868,459005868

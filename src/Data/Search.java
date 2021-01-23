@@ -71,7 +71,7 @@ public class Search {
         int element;
 
         for(int i = 0; i < array.length; i++) {
-            element = array[i].getAdjustedgross();
+            element = (int)array[i].getAdjustedgross();
             if(element == key) {
                 System.out.println(array[i].toString());
             }
@@ -80,13 +80,13 @@ public class Search {
         return " ";
     }
 
-    public static String individualSearch(Movies[] array, String name, String date, String genre, String rating, int totalgross, int adjustedgross) {
+    public static String individualSearch(Movies[] array, String name, String date, String genre, String rating, int totalgross, long adjustedgross) {
         String thename;
         String thedate;
         String thegenre;
         String therating;
         int thetotalgross;
-        int theadjustedgross;
+        long theadjustedgross;
 
         for(int i = 0; i < array.length; i++) {
             thename = array[i].getName();

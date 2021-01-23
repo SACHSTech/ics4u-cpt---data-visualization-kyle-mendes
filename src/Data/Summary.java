@@ -42,18 +42,18 @@ public class Summary {
 
     public static String Median(Movies[] array) {
         double number = array.length;
+        int i;
 
         if(number % 2 == 0) {
             number = number / 2;
-            number = (number + 1) / 2;
+            i = (int)number;
+            //System.out.println("The median is : " + array[i].toString());
+        } else {
+            number = Math.round(number / 2);
+            i = (int)number;
+            //System.out.println("The median is : " + array[i].toString());
         }
-
     }
-
-
-
-
-
-
+   return ("The median is : " + array[i].toString());
     
 }
