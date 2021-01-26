@@ -2,33 +2,34 @@ package Data;
 
 public class Summary {
 
-    public static String MaxValue(Movies[] array) {
+    public static int MaxValue(Movies[] array) {
+        
         int maxValue = 0;
 
         for(int i = 1; i < array.length; i++) {
-            //maxValue = array[i].getTotalgross();
+            maxValue = array[i].getTotalgross();
             if(array[i].getTotalgross() > maxValue) {
                 maxValue = array[i].getTotalgross();
             }
         }
 
-        return array[i].toString();
+        return maxValue;
     }
 
-    public static String MinValue(Movies[] array) {
+    public static int MinValue(Movies[] array) {
         int minValue = 0;
 
         for(int i = 0; i < array.length; i++) {
-            //minValue = array[i].getTotalgross();
+            minValue = array[i].getTotalgross();
             if(array[i].getTotalgross() < minValue) {
                 minValue = array[i].getTotalgross();
             }
         }
 
-        return array[i].toString();
+        return minValue;
     }
 
-    public static String Average(Movies[] array) {
+    public static double Average(Movies[] array) {
         int sum = 0;
         double average;
 
@@ -36,24 +37,77 @@ public class Summary {
             //sum = array.[i].getTotalgross();
             sum = sum + array[i].getTotalgross();
         }
-        average = sum/array.length;
-        return "The total gross average is: " + average;
+        average = Math.round((sum/array.length) * 100.0) / 100.0;
+        return average;
     }
 
-    public static String Median(Movies[] array) {
-        double number = array.length;
-        int i;
+    public static double Avggenre(Movies[] array, String genrekey) {
+        String genretype;
+        int count = 0;
+        double average = 0;
 
-        if(number % 2 == 0) {
-            number = number / 2;
-            i = (int)number;
-            //System.out.println("The median is : " + array[i].toString());
-        } else {
-            number = Math.round(number / 2);
-            i = (int)number;
-            //System.out.println("The median is : " + array[i].toString());
+        for(int i = 0; i < array.length; i++) {
+            genretype = array[i].getGenre();
+
+            if(genretype.equals(genrekey)) {
+                count++;
+                average = average + array[i].getTotalgross();
+            }
         }
+
+        if(count == 0) {
+            count = 1;
+        }
+
+        average = Math.round((average/count) * 100.0) / 100.0;
+        return average;
     }
-   return ("The median is : " + array[i].toString());
+
+    public static double Avgrate(Movies[] array, String ratekey) {
+        String ratetype;
+        int count = 0;
+        double average = 0;
+
+        for(int i = 0; i < array.length; i++) {
+            ratetype = array[i].getRating();
+
+            if(ratetype.equals(ratekey)) {
+                count++;
+                average = average + array[i].getTotalgross();
+            }
+        }
+
+        if(count == 0) {
+            count = 1;
+        }
+
+        average = Math.round((average/count) * 100.0) / 100.0;
+        return average;
+    }
+
+    public static double Avgrategenre(Movies[] array, String genrekey, String ratekey) {
+        String genretype;
+        String ratetype;
+        int count = 0;
+        double average = 0;
+
+        for(int i = 0; i < array.length; i++) {
+            genretype = array[i].getGenre();
+            ratetype = array[i].getRating();
+
+            if(genretype.equals(genrekey) && ratetype.equals(ratekey)) {
+                count++;
+                average = average + array[i].getTotalgross();
+            }
+        }
+
+        if(count == 0) {
+            count = 1;
+        }
+
+        average = Math.round((average/count) * 100.0) / 100.0;
+        return average;
+    
+    }
     
 }
