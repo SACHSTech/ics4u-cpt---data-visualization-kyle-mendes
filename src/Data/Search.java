@@ -103,7 +103,7 @@ public class Search {
 
             if(thename.equals(name) && thedate.equals(date) && thegenre.equals(genre) && therating.equals(rating) && (thetotalgross == totalgross) && (theadjustedgross == adjustedgross)) {
                 System.out.println(array[i].toString());
-            }
+            } 
         }
 
         return "Invalid Entry"; 
