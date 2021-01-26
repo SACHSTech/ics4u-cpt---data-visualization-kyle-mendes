@@ -40,7 +40,6 @@ public class Main {
 			movie = new Movies(name, date, genre, rating, totalgross, adjustedgross);
 			System.out.println(movie);
 			movies[count] = movie;
-			//Library.add(movie);
 			
 			count++;	
 		}

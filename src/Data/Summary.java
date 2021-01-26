@@ -106,7 +106,7 @@ public class Summary {
         }
 
         average = Math.round((average/count) * 100.0) / 100.0;
-        return average;
+        return average; 
     
     }
     

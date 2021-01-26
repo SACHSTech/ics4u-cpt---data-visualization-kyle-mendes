@@ -8,26 +8,26 @@ import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
 import javafx.stage.Stage;
 
-public class Graphs {
+public class PieChartApp extends Application {
 
     private PieChart chart;
     
-    private int action = 0;
-    private int adventure = 0;
-    private int blackcomedy = 0;
-    private int comedy = 0;
-    private int concert = 0;
-    private int doc = 0;
-    private int drama = 0;
-    private int horror = 0;
-    private int musical = 0;
-    private int romcom = 0;
-    private int thriller = 0;
-    private int western = 0;
+    public static ObservableList<PieChart.Data> generateData() {
 
-
-    public static void CountGenre(Movies[] array) {
+        /*
         String current;
+        int action = 0;
+        int adventure = 0;
+        int blackcomedy = 0;
+        int comedy = 0;
+        int concert = 0;
+        int doc = 0;
+        int drama = 0;
+        int horror = 0;
+        int musical = 0;
+        int romcom = 0;
+        int thriller = 0;
+        int western = 0;
         
         for(int i = 0; i < array.length; i++) {
             current = array[i].getGenre();
@@ -57,29 +57,33 @@ public class Graphs {
             } else if (current.equals("Western")) {
                 western++;
             }
+        
             
-        }     
-    
-    }
-
-    public static ObservableList<PieChart.Data> generateData() {
-        //int western = 9;
+        }  
+        */
+        
         return FXCollections.observableArrayList(
-                new PieChart.Data("Sun", western),
-                new PieChart.Data("IBM", 12),
-                new PieChart.Data("HP", 25),
-                new PieChart.Data("Dell", 22),
-                new PieChart.Data("Apple", 30));
+                new PieChart.Data("Action", 36),
+                new PieChart.Data("Adventure", 118),
+                new PieChart.Data("Black Comedy", 3),
+                new PieChart.Data("Comedy", 162),
+                new PieChart.Data("Concert/Performance", 2),
+                new PieChart.Data("Documentary", 16),
+                new PieChart.Data("Drama", 103),
+                new PieChart.Data("Horror", 5),
+                new PieChart.Data("Musical", 15),
+                new PieChart.Data("Romantic Comedy", 22),
+                new PieChart.Data("Thriller/Suspense", 23),
+                new PieChart.Data("Western", 7));
     }
- 
+    
     public Parent createContent() {
         chart = new PieChart(generateData());
         chart.setClockwise(false);
         return chart;
     }
  
-    @Override 
-    public void start(Stage primaryStage) throws Exception {
+    @Override public void start(Stage primaryStage) throws Exception {
         primaryStage.setScene(new Scene(createContent()));
         primaryStage.show();
     }
@@ -90,7 +94,6 @@ public class Graphs {
     public static void main(String[] args) {
         launch(args);
     }
-
 
 
 }
