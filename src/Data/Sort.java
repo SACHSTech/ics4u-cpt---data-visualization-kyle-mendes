@@ -24,7 +24,8 @@ public class Sort {
         }
     }
 
-    return array;
+
+    return array[i];
 
     public static Movies[] sortMax(Movies[] array) {
 
@@ -49,4 +50,5 @@ public class Sort {
     }
 
     return array;
+
 }
