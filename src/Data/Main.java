@@ -72,7 +72,7 @@ public class Main extends Application {
 			adjustedgross = Long.parseLong(space[5]);	
 			
 			movie = new Movies(name, date, genre, rating, totalgross, adjustedgross);
-			System.out.println(movie);
+			//System.out.println(movie);
 			movies[count] = movie;
 			
 			count++;	
@@ -340,6 +340,13 @@ public class Main extends Application {
 					launch(args);
 				}
 	
+			} else if(Choice.equals("Exit")) {
+				clearScreen();
+				System.out.println("Thank you for visiting!");
+				exit = false;
+			} else {
+				System.out.println("Invalid Entry - please try again");
+				exit = true;
 			}
 
 		}
