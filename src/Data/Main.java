@@ -1,5 +1,6 @@
 package Data;
 
+// import java items i need
 import java.util.ArrayList;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -12,6 +13,8 @@ import java.io.*;
 
 public class Main extends Application {
 
+	// initialize variables for charts
+	// bar graph
 	static int Chart;
 	static double action2;
 	static double adventure2;
@@ -24,17 +27,22 @@ public class Main extends Application {
 	static double thriller2;
 	static double western2;
 
+	// line graph
 	static double g2;
 	static double notrated;
 	static double pg2;
 	static double pg132;
 	static double r2;
 
+	// pie chart
+
+	// method to clear the screen
 	public static void clearScreen() {  
 		System.out.print("\033[H\033[2J");  
 		System.out.flush();  
 	}
 
+	// method to pause the screen
 	private static void sleep(int length) {
         try {
             Thread.sleep(length);
@@ -45,6 +53,7 @@ public class Main extends Application {
 
     public static void main(String[] args) throws IOException {
 		
+		// initialize variables to read file
 		String name;
 		String date;
 		String genre;
@@ -57,13 +66,16 @@ public class Main extends Application {
 		Movies movie;
 		Movies[] movies = new Movies[513];
 
+		// add file reader and input reader
 		BufferedReader thefile = new BufferedReader(new FileReader("src/Data/Disneymoviesgood.csv"));
 		BufferedReader key = new BufferedReader(new InputStreamReader(System.in));
 
+		// read all the data
 		while(count < 513) {
 			line = thefile.readLine();
 			String[] space = line.split(",");
 
+			// add data to movie object
 			name = space[0];
 			date = space[1];
 			genre = space[2];
@@ -71,23 +83,26 @@ public class Main extends Application {
 			totalgross = Integer.parseInt(space[4]);
 			adjustedgross = Long.parseLong(space[5]);	
 			
+			// create movie object
 			movie = new Movies(name, date, genre, rating, totalgross, adjustedgross);
-			//System.out.println(movie);
 			movies[count] = movie;
 			
 			count++;	
 		}
 
+		// close the file
 		thefile.close();
 
+		// welcome screen
 		System.out.println("Welcome to Disney Movies Database");
-		System.out.println("Here are all Disney movies with their release date, genre, rating, total and inflated adjusted gross.");
+		System.out.println("Here are all Disney movies with their release date, genre, mpa rating, total and inflated adjusted gross.");
 		System.out.println("The data here is up until 2016.");
 
 		//Start the simulation loop
 		Boolean exit = true;
 		String Choice;
 		while(exit) {
+			// main menu
 			exit = true;
 			System.out.println();
 			System.out.println("Welcome to the main menu please select an option from below:");
@@ -95,20 +110,21 @@ public class Main extends Application {
 			System.out.println("1 - Search for specific data value");
 			System.out.println("2 - View an individual movie");
 			System.out.println("3 - View filtered data by genre and rating");
-			// System.out.println("4 - View an individual movie");
-			System.out.println("5 - View summary of the data");
+			System.out.println("4 - View Summary of data");
+			System.out.println("5 - View data sorted by total gross");
 			System.out.println("6 - View charts");
 			System.out.println("7 - Exit");
 			System.out.print("Enter your choice: ");
 			Choice = key.readLine();
 
 			// Go to user destination
-			// View Sorted data
+			// View Search data
 			if(Choice.equals("1")) {
 				System.out.println("Please select which data type you would like to search for:");
 				System.out.println("1 - Name \n 2 - Date \n 3 - Genre \n 4 - Rating \n 5 - Total gross \n 6 - Adjusted gross");
 				String Choicex = key.readLine();
 
+				// Search by name
 				if(Choicex.equals("1")) {
 					System.out.print("Please enter name: ");
 					Choicex = key.readLine();
@@ -126,6 +142,7 @@ public class Main extends Application {
 						exit = false;
 					}
 					
+				// Search by date
 				} else if(Choicex.equals("2")) {
 					System.out.print("Please enter date: ");
 					Choicex = key.readLine();
@@ -143,10 +160,12 @@ public class Main extends Application {
 						exit = false;
 					}
 					
+				// Search by genre
 				} else if(Choicex.equals("3")) {
 					System.out.print("Please enter genre: ");
 					Choicex = key.readLine();
-					Search.genreSearch(movies, Choicex).toString();
+					//Search.genreSearch(movies, Choicex).toString();
+					System.out.println(Search.genreSearch(movies, Choicex));
 
 					System.out.println("\n 1 - Main Menu \n 2 - Exit");
 					Choicex = key.readLine();
@@ -160,6 +179,7 @@ public class Main extends Application {
 						exit = false;
 					}
 					
+				// Search by mpa rating
 				} else if(Choicex.equals("4")) {
 					System.out.print("Please enter rating: ");
 					Choicex = key.readLine();
@@ -177,6 +197,7 @@ public class Main extends Application {
 						exit = false;
 					}
 					
+				// Search by total gross
 				} else if(Choicex.equals("5")) {
 					System.out.print("Please enter total gross: ");
 					Choicex = key.readLine();
@@ -195,6 +216,7 @@ public class Main extends Application {
 						exit = false;
 					}
 					
+				// Search by adjusted gross
 				} else if(Choicex.equals("6")) {
 					System.out.print("Please enter total gross: ");
 					Choicex = key.readLine();
@@ -215,6 +237,7 @@ public class Main extends Application {
 					
 				}
 
+			// Search for an individual movie
 			} else if(Choice.equals("2")) {
 				System.out.println("Please enter the following information:");
 				System.out.print("Name: ");
@@ -246,6 +269,7 @@ public class Main extends Application {
 					exit = false;
 				}
 
+			// Search by filters
 			} else if(Choice.equals("3")) {
 				System.out.println("Here you are able to filter the movies by genre and rating.");
 				System.out.println("Genre: ");
@@ -294,8 +318,17 @@ public class Main extends Application {
 
 				if(Choicey.equals("1")) {
 					Sort.sortMin(movies);
+
+					for (int i = 0; i < movies.length; i++) {
+                        System.out.println(movies[i]);
+					}
+					
 				} else if(Choicey.equals("2")) {
 					Sort.sortMax(movies);
+
+					for (int i = 0; i < movies.length; i++) {
+                        System.out.println(movies[i]);
+					}
 				}
 
 				System.out.println("\n 1 - Main Menu \n 2 - Exit");
