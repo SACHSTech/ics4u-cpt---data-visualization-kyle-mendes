@@ -72,11 +72,11 @@ public class Search {
         return " ";
     }
 
-    public static String adjustedgrossSearch(Movies[] array, int key) {
-        int element;
+    public static String adjustedgrossSearch(Movies[] array, Long key) {
+        Long element;
 
         for(int i = 0; i < array.length; i++) {
-            element = (int)array[i].getAdjustedgross();
+            element = (Long)array[i].getAdjustedgross();
             if(element == key) {
                 System.out.println(array[i].toString());
             }
@@ -106,7 +106,23 @@ public class Search {
             } 
         }
 
-        return "Invalid Entry"; 
+        return " "; 
 
     } 
+
+    public static String Filterdata(Movies[] array, String genre, String rating) {
+        String thegenre;
+        String therating;
+
+        for(int i = 0; i < array.length; i++) {
+            thegenre = array[i].getGenre();
+            therating = array[i].getRating();
+
+            if(thegenre.equals(genre) && therating.equals(rating)) {
+                System.out.println(array[i].toString());
+            }
+        }
+
+        return " ";
+    }
 }
