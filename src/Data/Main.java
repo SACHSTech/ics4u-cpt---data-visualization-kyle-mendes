@@ -7,16 +7,41 @@ import java.io.IOException;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import jdk.internal.org.objectweb.asm.util.TraceModuleVisitor;
 
 import java.io.*;
 
 public class Main extends Application {
 
+	static int Chart;
+	static double action2;
+	static double adventure2;
+	static double bcom2;
+	static double comedy2;
+	static double drama2;
+	static double horror2;
+	static double musical2;
+	static double romcom2;
+	static double thriller2;
+	static double western2;
+
+	static double g2;
+	static double notrated;
+	static double pg2;
+	static double pg132;
+	static double r2;
+
 	public static void clearScreen() {  
 		System.out.print("\033[H\033[2J");  
 		System.out.flush();  
 	}
+
+	private static void sleep(int length) {
+        try {
+            Thread.sleep(length);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
     public static void main(String[] args) throws IOException {
 		
@@ -67,9 +92,9 @@ public class Main extends Application {
 			System.out.println();
 			System.out.println("Welcome to the main menu please select an option from below:");
 			System.out.println("------------------------------------------------------------");
-			System.out.println("1 - View sorted data by total gross");
+			System.out.println("1 - Search for specific data value");
 			System.out.println("2 - View an individual movie");
-			System.out.println("3 - View filtered data");
+			System.out.println("3 - View filtered data by genre and rating");
 			// System.out.println("4 - View an individual movie");
 			System.out.println("5 - View summary of the data");
 			System.out.println("6 - View charts");
@@ -92,7 +117,7 @@ public class Main extends Application {
 					System.out.println("\n 1 - Main Menu  \n 2 - Exit");
 					Choicex = key.readLine();
 					if(Choicex.equals("1")) {
-						Thread.sleep(300);
+						sleep(300);
 						clearScreen();
 						exit = true;	
 					} else if(Choicex.equals("2")) {
@@ -109,7 +134,7 @@ public class Main extends Application {
 					System.out.println("\n 1 - Main Menu \n 2 - Exit");
 					Choicex = key.readLine();
 					if(Choicex.equals("1")) {
-						Thread.sleep(300);
+						sleep(300);
 						clearScreen();
 						exit = true;	
 					} else if(Choicex.equals("2")) {
@@ -126,7 +151,7 @@ public class Main extends Application {
 					System.out.println("\n 1 - Main Menu \n 2 - Exit");
 					Choicex = key.readLine();
 					if(Choicex.equals("1")) {
-						Thread.sleep(300);
+						sleep(300);
 						clearScreen();
 						exit = true;	
 					} else if(Choicex.equals("2")) {
@@ -143,7 +168,7 @@ public class Main extends Application {
 					System.out.println("\n 1 - Main Menu \n 2 - Exit");
 					Choicex = key.readLine();
 					if(Choicex.equals("1")) {
-						Thread.sleep(300);
+						sleep(300);
 						clearScreen();
 						exit = true;	
 					} else if(Choicex.equals("2")) {
@@ -161,7 +186,7 @@ public class Main extends Application {
 					System.out.println("\n 1 - Main Menu \n 2 - Exit");
 					Choicex = key.readLine();
 					if(Choicex.equals("1")) {
-						Thread.sleep(300);
+						sleep(300);
 						clearScreen();
 						exit = true;	
 					} else if(Choicex.equals("2")) {
@@ -179,7 +204,7 @@ public class Main extends Application {
 					System.out.println("\n 1 - Main Menu \n 2 - Exit");
 					Choicex = key.readLine();
 					if(Choicex.equals("1")) {
-						Thread.sleep(300);
+						sleep(300);
 						clearScreen();
 						exit = true;	
 					} else if(Choicex.equals("2")) {
@@ -212,7 +237,7 @@ public class Main extends Application {
 				System.out.println("\n 1 - Main Menu \n 2 - Exit");
 				String Choicex = key.readLine();
 				if(Choicex.equals("1")) {
-					Thread.sleep(300);
+					sleep(300);
 					clearScreen();
 					exit = true;	
 				} else if(Choicex.equals("2")) {
@@ -228,12 +253,12 @@ public class Main extends Application {
 				System.out.println("Rating: ");
 				String rating2 = key.readLine();
 
-				Search.Filterdata(movies, genre2, rating2);
+				Search.Filterdata(movies, genre2, rating2).toString();
 
 				System.out.println("\n 1 - Main Menu \n 2 - Exit");
 				String Choicex = key.readLine();
 				if(Choicex.equals("1")) {
-					Thread.sleep(300);
+					sleep(300);
 					clearScreen();
 					exit = true;	
 				} else if(Choicex.equals("2")) {
@@ -253,7 +278,7 @@ public class Main extends Application {
 				System.out.println("\n 1 - Main Menu \n 2 - Exit");
 				String Choicex = key.readLine();
 				if(Choicex.equals("1")) {
-					Thread.sleep(300);
+					sleep(300);
 					clearScreen();
 					exit = true;	
 				} else if(Choicex.equals("2")) {
@@ -276,7 +301,7 @@ public class Main extends Application {
 				System.out.println("\n 1 - Main Menu \n 2 - Exit");
 				String Choicex = key.readLine();
 				if(Choicex.equals("1")) {
-					Thread.sleep(300);
+					sleep(300);
 					clearScreen();
 					exit = true;	
 				} else if(Choicex.equals("2")) {
@@ -291,20 +316,46 @@ public class Main extends Application {
 				String Choicey = key.readLine();
 
 				if(Choicey.equals("1")) {
-					primaryStage.setScene(new Scene(PieChartApp.));
-				}
+					action2 = Summary.Avggenre(movies, "Action");
+					adventure2 = Summary.Avggenre(movies, "Adventure");
+					bcom2 = Summary.Avggenre(movies, "Black Comedy");
+					comedy2 = Summary.Avggenre(movies, "Comedy");
+					drama2 = Summary.Avggenre(movies, "Drama");
+					horror2 = Summary.Avggenre(movies, "Horror");
+					musical2 = Summary.Avggenre(movies, "Musical");
+					romcom2 = Summary.Avggenre(movies, "Romantic Comedy");
+					thriller2 = Summary.Avggenre(movies, "Thriller/Suspense");
+					western2 = Summary.Avggenre(movies, "Western");
 
-				
+					Chart = 1;
+					launch(args);
+				} else if(Choicey.equals("2")) {
+					g2 = Summary.Avgrate(movies, "G");
+					notrated = Summary.Avgrate(movies, "Not Rated");
+					pg2 = Summary.Avgrate(movies, "PG");
+					pg132 = Summary.Avgrate(movies, "PG-13");
+					r2 = Summary.Avgrate(movies, "R");
+
+					Chart = 2;
+					launch(args);
+				}
+	
 			}
-		
 
 		}
 
+	}
 
-		
-		
+	public void start(Stage primaryStage) throws Exception {
+		if(Chart == 1) {
+			primaryStage.setScene(new Scene(Graphs.barchart(action2, adventure2, bcom2, comedy2, drama2, horror2, musical2, romcom2, thriller2, western2)));
+		} 
 
+		else if(Chart == 2) {
+			primaryStage.setScene(new Scene(Graphs.linechart(g2, notrated, pg2, pg132, r2)));
+		}
 
+		primaryStage.show();
 	}
 
 }
