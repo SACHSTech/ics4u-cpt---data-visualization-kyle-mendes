@@ -103,8 +103,8 @@ public class Main extends Application {
 		System.out.println("Here are all Disney movies with their release date, genre, mpa rating, total and inflated adjusted gross.");
 		System.out.println("The data here is up until 2016.");
 
-		//Start the simulation loop
-		while(exit) {
+		// Start the simulation loop
+		while (exit) {
 			// main menu
 			exit = true;
 			System.out.println();
@@ -123,7 +123,7 @@ public class Main extends Application {
 
 			// Go to user destination
 			// View Search data
-			if(Choice.equals("1")) {
+			if (Choice.equals("1")) {
 				System.out.println("Please select which data type you would like to search for:");
 				System.out.println("1 - Name \n 2 - Date \n 3 - Genre \n 4 - Rating \n 5 - Total gross \n 6 - Adjusted gross");
 				sleep(300);
@@ -131,7 +131,7 @@ public class Main extends Application {
 				String Choicex = key.readLine();
 
 				// Search by name
-				if(Choicex.equals("1")) {
+				if (Choicex.equals("1")) {
 					System.out.print("Please enter name: ");
 					Choicex = key.readLine();
 					System.out.println(Search.nameSearch(movies, Choicex));
@@ -139,110 +139,120 @@ public class Main extends Application {
 
 					// Main menu or exit
 					System.out.println("\n 1 - Main Menu  \n 2 - Exit");
+					System.out.print("Your choice: ");
 					Choicex = key.readLine();
-					if(Choicex.equals("1")) {
+					if (Choicex.equals("1")) {
 						sleep(300);
 						clearScreen();
 						exit = true;	
-					} else if(Choicex.equals("2")) {
+					} else if (Choicex.equals("2")) {
 						clearScreen();
 						System.out.println("Thank you for visiting!");
 						exit = false;
 					}
 					
 				// Search by date
-				} else if(Choicex.equals("2")) {
+				} else if (Choicex.equals("2")) {
 					System.out.print("Please enter date: ");
 					Choicex = key.readLine();
 					//Search.dateSearch(movies, Choicex).toString();
 					System.out.println(Search.dateSearch(movies, Choicex));
 
+					// Main menu or exit
 					System.out.println("\n 1 - Main Menu \n 2 - Exit");
 					System.out.print("Your choice: ");
 					Choicex = key.readLine();
-					if(Choicex.equals("1")) {
+					if (Choicex.equals("1")) {
 						sleep(300);
 						clearScreen();
 						exit = true;	
-					} else if(Choicex.equals("2")) {
+					} else if (Choicex.equals("2")) {
 						clearScreen();
 						System.out.println("Thank you for visiting!");
 						exit = false;
 					}
 					
 				// Search by genre
-				} else if(Choicex.equals("3")) {
+				} else if (Choicex.equals("3")) {
 					System.out.print("Please enter genre: ");
 					Choicex = key.readLine();
 					//Search.genreSearch(movies, Choicex).toString();
 					System.out.println(Search.genreSearch(movies, Choicex));
 
+					// Main menu or exit
 					System.out.println("\n 1 - Main Menu \n 2 - Exit");
+					System.out.print("Your choice: ");
 					Choicex = key.readLine();
-					if(Choicex.equals("1")) {
+					if (Choicex.equals("1")) {
 						sleep(300);
 						clearScreen();
 						exit = true;	
-					} else if(Choicex.equals("2")) {
+					} else if (Choicex.equals("2")) {
 						clearScreen();
 						System.out.println("Thank you for visiting!");
 						exit = false;
 					}
 					
 				// Search by mpa rating
-				} else if(Choicex.equals("4")) {
+				} else if (Choicex.equals("4")) {
 					System.out.print("Please enter rating: ");
 					Choicex = key.readLine();
 					System.out.println(Search.ratingSearch(movies, Choicex));
 					//Search.ratingSearch(movies, Choicex).toString();
 
+					// Main menu or exit
 					System.out.println("\n 1 - Main Menu \n 2 - Exit");
+					System.out.print("Your choice: ");
 					Choicex = key.readLine();
-					if(Choicex.equals("1")) {
+					if (Choicex.equals("1")) {
 						sleep(300);
 						clearScreen();
 						exit = true;	
-					} else if(Choicex.equals("2")) {
+					} else if (Choicex.equals("2")) {
 						clearScreen();
 						System.out.println("Thank you for visiting!");
 						exit = false;
 					}
 					
 				// Search by total gross
-				} else if(Choicex.equals("5")) {
+				} else if (Choicex.equals("5")) {
 					System.out.print("Please enter total gross: ");
 					Choicex = key.readLine();
 					int Choicen = Integer.parseInt(Choicex);
 					System.out.println(Search.totalgrossSearch(movies, Choicen));
 					//Search.totalgrossSearch(movies, Choicen).toString();
 
+					// Main menu or exit
 					System.out.println("\n 1 - Main Menu \n 2 - Exit");
+					System.out.print("Your choice: ");
 					Choicex = key.readLine();
-					if(Choicex.equals("1")) {
+					if (Choicex.equals("1")) {
 						sleep(300);
 						clearScreen();
 						exit = true;	
-					} else if(Choicex.equals("2")) {
+					} else if (Choicex.equals("2")) {
 						clearScreen();
 						System.out.println("Thank you for visiting!");
 						exit = false;
 					}
 					
 				// Search by adjusted gross
-				} else if(Choicex.equals("6")) {
+				} else if (Choicex.equals("6")) {
 					System.out.print("Please enter adjusted gross: ");
 					Choicex = key.readLine();
 					Long Choicen = Long.parseLong(Choicex);
 					System.out.println(Search.adjustedgrossSearch(movies, Choicen));
 					//Search.adjustedgrossSearch(movies, Choicen).toString();
 
+					// Main menu or exit
 					System.out.println("\n 1 - Main Menu \n 2 - Exit");
+					System.out.print("Your choice: ");
 					Choicex = key.readLine();
-					if(Choicex.equals("1")) {
+					if (Choicex.equals("1")) {
 						sleep(300);
 						clearScreen();
 						exit = true;	
-					} else if(Choicex.equals("2")) {
+					} else if (Choicex.equals("2")) {
 						clearScreen();
 						System.out.println("Thank you for visiting!");
 						exit = false;
@@ -251,7 +261,7 @@ public class Main extends Application {
 				}
 
 			// Search for an individual movie
-			} else if(Choice.equals("2")) {
+			} else if (Choice.equals("2")) {
 				System.out.println("Please enter the following information:");
 				System.out.print("Name: ");
 				String name2 = key.readLine();
@@ -270,20 +280,22 @@ public class Main extends Application {
 
 				System.out.println(Search.individualSearch(movies, name2, date2, genre2, rating2, totalgross2, adjustedgross2));
 
+				// Main menu or exit
 				System.out.println("\n 1 - Main Menu \n 2 - Exit");
+				System.out.print("Your choice: ");
 				String Choicex = key.readLine();
-				if(Choicex.equals("1")) {
+				if (Choicex.equals("1")) {
 					sleep(300);
 					clearScreen();
 					exit = true;	
-				} else if(Choicex.equals("2")) {
+				} else if (Choicex.equals("2")) {
 					clearScreen();
 					System.out.println("Thank you for visiting!");
 					exit = false;
 				}
 
 			// Search by filters
-			} else if(Choice.equals("3")) {
+			} else if (Choice.equals("3")) {
 				System.out.println("Here you are able to filter the movies by genre and rating.");
 				System.out.print("Genre: ");
 				String genre2 = key.readLine();
@@ -292,19 +304,22 @@ public class Main extends Application {
 
 				Search.Filterdata(movies, genre2, rating2).toString();
 
+				// Main menu or exit
 				System.out.println("\n 1 - Main Menu \n 2 - Exit");
+				System.out.print("Your choice: ");
 				String Choicex = key.readLine();
-				if(Choicex.equals("1")) {
+				if (Choicex.equals("1")) {
 					sleep(300);
 					clearScreen();
 					exit = true;	
-				} else if(Choicex.equals("2")) {
+				} else if (Choicex.equals("2")) {
 					clearScreen();
 					System.out.println("Thank you for visiting!");
 					exit = false;
 				}
 
-			} else if(Choice.equals("4")) {
+			// Print summary of the data
+			} else if (Choice.equals("4")) {
 				System.out.println("Summary Information");
 				System.out.println("Total movies: " + movies.length);
 				System.out.println("Max total gross: " + Summary.MaxValue(movies));
@@ -313,35 +328,40 @@ public class Main extends Application {
 				System.out.println("Median total gross: " + Sort.Median(movies));
 				System.out.println("Standard deviation for total gross: " + Summary.standardDeviation(movies));
 
+				// Main menu or exit
 				System.out.println("\n 1 - Main Menu \n 2 - Exit");
+				System.out.print("Your choice: ");
 				String Choicex = key.readLine();
-				if(Choicex.equals("1")) {
+				if (Choicex.equals("1")) {
 					sleep(300);
 					clearScreen();
 					exit = true;	
-				} else if(Choicex.equals("2")) {
+				} else if (Choicex.equals("2")) {
 					clearScreen();
 					System.out.println("Thank you for visiting!");
 					exit = false;
 				}
 
-			} else if(Choice.equals("5")) {
+			} else if (Choice.equals("5")) {
 				// Add Stuff
 
 
-			} else if(Choice.equals("6")) {
+			// View sorted data
+			} else if (Choice.equals("6")) {
 				System.out.println("Would you like the data sorted \n 1 - low to high or 2 - high to low: ");
 				System.out.print("Your choice: ");
 				String Choicey = key.readLine();
 
-				if(Choicey.equals("1")) {
+				// Sort by least total gross
+				if (Choicey.equals("1")) {
 					Sort.sortMin(movies);
 
 					for (int i = 0; i < movies.length; i++) {
                         System.out.println(movies[i]);
 					}
 					
-				} else if(Choicey.equals("2")) {
+				// Sort by greatest total gross
+				} else if (Choicey.equals("2")) {
 					Sort.sortMax(movies);
 
 					for (int i = 0; i < movies.length; i++) {
@@ -349,24 +369,28 @@ public class Main extends Application {
 					}
 				}
 
+				// Main menu or exit
 				System.out.println("\n 1 - Main Menu \n 2 - Exit");
+				System.out.print("Your choice: ");
 				String Choicex = key.readLine();
-				if(Choicex.equals("1")) {
+				if (Choicex.equals("1")) {
 					sleep(300);
 					clearScreen();
 					exit = true;	
-				} else if(Choicex.equals("2")) {
+				} else if (Choicex.equals("2")) {
 					clearScreen();
 					System.out.println("Thank you for visiting!");
 					exit = false;
 				}
 
-			} else if(Choice.equals("7")) {
+			// View charts
+			} else if (Choice.equals("7")) {
 				System.out.println("Which chart do you want to see \n 1 - Bar Graph \n 2 - Line Graph \n 3 - Tableview");
 				System.out.print("Your choice: ");
 				String Choicey = key.readLine();
 
-				if(Choicey.equals("1")) {
+				// View barchart
+				if (Choicey.equals("1")) {
 					action2 = Summary.Avggenre(movies, "Action");
 					adventure2 = Summary.Avggenre(movies, "Adventure");
 					bcom2 = Summary.Avggenre(movies, "Black Comedy");
@@ -380,7 +404,9 @@ public class Main extends Application {
 
 					Chart = 1;
 					launch(args);
-				} else if(Choicey.equals("2")) {
+
+				// View linechart
+				} else if (Choicey.equals("2")) {
 					g2 = Summary.Avgrate(movies, "G");
 					notrated = Summary.Avgrate(movies, "Not Rated");
 					pg2 = Summary.Avgrate(movies, "PG");
@@ -391,7 +417,7 @@ public class Main extends Application {
 					launch(args);
 				}
 	
-			} else if(Choice.equals("8")) {
+			} else if (Choice.equals("8")) {
 				clearScreen();
 				System.out.println("Thank you for visiting!");
 				exit = false;
