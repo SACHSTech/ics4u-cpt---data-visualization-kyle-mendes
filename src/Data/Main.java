@@ -9,7 +9,6 @@ import java.io.IOException;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.io.*;
 
 public class Main extends Application {
@@ -131,12 +130,13 @@ public class Main extends Application {
 			System.out.println("7 - Exit");
 			System.out.print("Enter your choice: ");
 			Choice = key.readLine();
+			System.out.println();
 
 			// Go to user destination
 			// View Search data
 			if (Choice.equals("1")) {
 				System.out.println("Please select which data type you would like to search for:");
-				System.out.println("1 - Name \n 2 - Date \n 3 - Genre \n 4 - Rating \n 5 - Total gross \n 6 - Adjusted gross");
+				System.out.println("1 - Name \n2 - Date \n3 - Genre \n4 - Rating \n5 - Total gross \n6 - Adjusted gross");
 				sleep(300);
 				System.out.print("Your choice: ");
 				String Choicex = key.readLine();
@@ -146,10 +146,9 @@ public class Main extends Application {
 					System.out.print("Please enter name: ");
 					Choicex = key.readLine();
 					System.out.println(Search.nameSearch(movies, Choicex));
-					//Search.nameSearch(movies, Choicex).toString();
 
 					// Main menu or exit
-					System.out.println("\n 1 - Main Menu  \n 2 - Exit");
+					System.out.println("\n1 - Main Menu  \n2 - Exit");
 					System.out.print("Your choice: ");
 					Choicex = key.readLine();
 					if (Choicex.equals("1")) {
@@ -166,11 +165,10 @@ public class Main extends Application {
 				} else if (Choicex.equals("2")) {
 					System.out.print("Please enter date: ");
 					Choicex = key.readLine();
-					//Search.dateSearch(movies, Choicex).toString();
 					System.out.println(Search.dateSearch(movies, Choicex));
 
 					// Main menu or exit
-					System.out.println("\n 1 - Main Menu \n 2 - Exit");
+					System.out.println("1 - Main Menu \n2 - Exit");
 					System.out.print("Your choice: ");
 					Choicex = key.readLine();
 					if (Choicex.equals("1")) {
@@ -191,7 +189,7 @@ public class Main extends Application {
 					System.out.println(Search.genreSearch(movies, Choicex));
 
 					// Main menu or exit
-					System.out.println("\n 1 - Main Menu \n 2 - Exit");
+					System.out.println("1 - Main Menu \n2 - Exit");
 					System.out.print("Your choice: ");
 					Choicex = key.readLine();
 					if (Choicex.equals("1")) {
@@ -212,7 +210,7 @@ public class Main extends Application {
 					//Search.ratingSearch(movies, Choicex).toString();
 
 					// Main menu or exit
-					System.out.println("\n 1 - Main Menu \n 2 - Exit");
+					System.out.println("1 - Main Menu \n2 - Exit");
 					System.out.print("Your choice: ");
 					Choicex = key.readLine();
 					if (Choicex.equals("1")) {
@@ -231,10 +229,9 @@ public class Main extends Application {
 					Choicex = key.readLine();
 					int Choicen = Integer.parseInt(Choicex);
 					System.out.println(Search.totalgrossSearch(movies, Choicen));
-					//Search.totalgrossSearch(movies, Choicen).toString();
 
 					// Main menu or exit
-					System.out.println("\n 1 - Main Menu \n 2 - Exit");
+					System.out.println("\n1 - Main Menu \n2 - Exit");
 					System.out.print("Your choice: ");
 					Choicex = key.readLine();
 					if (Choicex.equals("1")) {
@@ -253,10 +250,9 @@ public class Main extends Application {
 					Choicex = key.readLine();
 					Long Choicen = Long.parseLong(Choicex);
 					System.out.println(Search.adjustedgrossSearch(movies, Choicen));
-					//Search.adjustedgrossSearch(movies, Choicen).toString();
 
 					// Main menu or exit
-					System.out.println("\n 1 - Main Menu \n 2 - Exit");
+					System.out.println("1 - Main Menu \n2 - Exit");
 					System.out.print("Your choice: ");
 					Choicex = key.readLine();
 					if (Choicex.equals("1")) {
@@ -292,7 +288,7 @@ public class Main extends Application {
 				System.out.println(Search.individualSearch(movies, name2, date2, genre2, rating2, totalgross2, adjustedgross2));
 
 				// Main menu or exit
-				System.out.println("\n 1 - Main Menu \n 2 - Exit");
+				System.out.println("1 - Main Menu \n2 - Exit");
 				System.out.print("Your choice: ");
 				String Choicex = key.readLine();
 				if (Choicex.equals("1")) {
@@ -316,7 +312,7 @@ public class Main extends Application {
 				Search.Filterdata(movies, genre2, rating2).toString();
 
 				// Main menu or exit
-				System.out.println("\n 1 - Main Menu \n 2 - Exit");
+				System.out.println("\n 1 - Main Menu \n2 - Exit");
 				System.out.print("Your choice: ");
 				String Choicex = key.readLine();
 				if (Choicex.equals("1")) {
@@ -340,7 +336,7 @@ public class Main extends Application {
 				System.out.println("Standard deviation for total gross: " + Summary.standardDeviation(movies));
 
 				// Main menu or exit
-				System.out.println("\n 1 - Main Menu \n 2 - Exit");
+				System.out.println("\n1 - Main Menu \n2 - Exit");
 				System.out.print("Your choice: ");
 				String Choicex = key.readLine();
 				if (Choicex.equals("1")) {
@@ -355,7 +351,8 @@ public class Main extends Application {
 
 			// View sorted data
 			} else if (Choice.equals("5")) {
-				System.out.println("Would you like the data sorted \n 1 - low to high or 2 - high to low: ");
+				System.out.println("Would you like the data sorted");
+				System.out.println("1 - low to high or 2 - high to low: ");
 				System.out.print("Your choice: ");
 				String Choicey = key.readLine();
 
@@ -377,7 +374,7 @@ public class Main extends Application {
 				}
 
 				// Main menu or exit
-				System.out.println("\n 1 - Main Menu \n 2 - Exit");
+				System.out.println("\n1 - Main Menu \n2 - Exit");
 				System.out.print("Your choice: ");
 				String Choicex = key.readLine();
 				if (Choicex.equals("1")) {
@@ -392,7 +389,10 @@ public class Main extends Application {
 
 			// View charts
 			} else if (Choice.equals("6")) {
-				System.out.println("Which chart do you want to see \n 1 - Bar Graph \n 2 - Line Graph \n 3 - Pie Chart");
+				System.out.println("Which chart do you want to see:");
+				System.out.println("1 - Bar graph (Average total gross per genre)");
+				System.out.println("2 - Line graph (Average total gross per mpa rating");
+				System.out.println("3 - Pie chart (Number of movies per genre");
 				System.out.print("Your choice: ");
 				String Choicey = key.readLine();
 
@@ -412,7 +412,6 @@ public class Main extends Application {
 					Chart = 1;
 					launch(args);
 			
-
 				// View linechart
 				} else if (Choicey.equals("2")) {
 					g2 = Summary.Avgrate(movies, "G");
@@ -445,12 +444,13 @@ public class Main extends Application {
 					
 				}
 			
-				
-	
+			// Exit
 			} else if (Choice.equals("7")) {
 				clearScreen();
 				System.out.println("Thank you for visiting!");
 				exit = false;
+
+			// Invalid number try again
 			} else {
 				System.out.println("Invalid Entry - please try again");
 				exit = true;
@@ -460,6 +460,7 @@ public class Main extends Application {
 
 	}
 
+	// Runs the charts
 	public void start(Stage primaryStage) throws Exception {
 		if(Chart == 1) {
 			primaryStage.setScene(new Scene(Graphs.barchart(action2, adventure2, bcom2, comedy2, drama2, horror2, musical2, romcom2, thriller2, western2)));
