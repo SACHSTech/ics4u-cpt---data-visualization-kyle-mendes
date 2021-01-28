@@ -50,13 +50,14 @@ public class Sort {
         return array;
     }
 
-    public static double Median(Movies[] array) {
+    public static Long Median(Movies[] array) {
         int number = array.length; 
         int ii;
         int i;
         double median;
         double gross;
         double gross2;
+        Long finalmedian;
 
         sortMin(array);
 
@@ -74,8 +75,9 @@ public class Sort {
             i = (int)number;
             median = array[i].getTotalgross();
         }
+        finalmedian = (long) median;
 
-        return median;
+        return finalmedian;
     }
 
 

@@ -2,14 +2,14 @@ package Data;
 
 public class Summary {
 
-    public static int MaxValue(Movies[] array) {
+    public static Long MaxValue(Movies[] array) {
         
-        int maxValue = 0;
+        Long maxValue = (long) array[1].getTotalgross();
 
-        for(int i = 1; i < array.length; i++) {
-            maxValue = array[i].getTotalgross();
+        for(int i = 0; i < array.length; i++) {
+            //maxValue = (long) array[i].getTotalgross();
             if(array[i].getTotalgross() > maxValue) {
-                maxValue = array[i].getTotalgross();
+                maxValue = (long) array[i].getTotalgross();
             }
         }
 
@@ -17,10 +17,10 @@ public class Summary {
     }
 
     public static int MinValue(Movies[] array) {
-        int minValue = 0;
+        int minValue = array[1].getTotalgross();
 
         for(int i = 0; i < array.length; i++) {
-            minValue = array[i].getTotalgross();
+            //minValue = array[i].getTotalgross();
             if(array[i].getTotalgross() < minValue) {
                 minValue = array[i].getTotalgross();
             }
@@ -29,16 +29,18 @@ public class Summary {
         return minValue;
     }
 
-    public static double Average(Movies[] array) {
+    public static Long Average(Movies[] array) {
         int sum = 0;
-        double average;
+        double average = 0;
+        Long finalaverage;
 
         for(int i = 0; i < array.length; i++) {
             //sum = array.[i].getTotalgross();
-            sum = sum + array[i].getTotalgross();
+            average = average + array[i].getTotalgross();
         }
-        average = Math.round((sum/array.length) * 100.0) / 100.0;
-        return average;
+        average = (average/array.length);
+        finalaverage  = (long) average;
+        return finalaverage;
     }
 
     public static double Avggenre(Movies[] array, String genrekey) {
@@ -108,6 +110,31 @@ public class Summary {
         average = Math.round((average/count) * 100.0) / 100.0;
         return average; 
     
+    }
+
+    public static Long standardDeviation(Movies[] array) {
+        int sum = 0;
+        double average;
+        double sum2 = 0;
+        double sum3 = 0;
+        double answer;
+        Long finalanswer;
+
+        // Mean
+        for(int i = 0; i < array.length; i++) {
+            //sum = array.[i].getTotalgross();
+            sum = sum + array[i].getTotalgross();
+        }
+        average = Math.round((sum/array.length) * 100.0) / 100.0;
+
+        for (int i = 0; i < array.length; i++) {
+            sum2 = Math.pow((array[i].getTotalgross() - average), 2);
+            sum3 = sum3 + sum2;
+        }
+
+        answer = Math.round(Math.sqrt((sum3/array.length)) * 100.0) / 100.0;
+        finalanswer = (long) answer;
+        return finalanswer;
     }
     
 }

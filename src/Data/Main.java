@@ -2,6 +2,7 @@ package Data;
 
 // import java items i need
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -45,13 +46,17 @@ public class Main extends Application {
 	// method to pause the screen
 	private static void sleep(int length) {
         try {
-            Thread.sleep(length);
+			Thread.sleep(length);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    }
+	}
 
     public static void main(String[] args) throws IOException {
+
+		// initialize loop variables
+		Boolean exit = true;
+		String Choice;
 		
 		// initialize variables to read file
 		String name;
@@ -99,8 +104,6 @@ public class Main extends Application {
 		System.out.println("The data here is up until 2016.");
 
 		//Start the simulation loop
-		Boolean exit = true;
-		String Choice;
 		while(exit) {
 			// main menu
 			exit = true;
@@ -110,10 +113,11 @@ public class Main extends Application {
 			System.out.println("1 - Search for specific data value");
 			System.out.println("2 - View an individual movie");
 			System.out.println("3 - View filtered data by genre and rating");
-			System.out.println("4 - View Summary of data");
-			System.out.println("5 - View data sorted by total gross");
-			System.out.println("6 - View charts");
-			System.out.println("7 - Exit");
+			System.out.println("4 - View summary of data");
+			System.out.println("5 - View average total gross based on genre or rating");
+			System.out.println("6 - View data sorted by total gross");
+			System.out.println("7 - View charts");
+			System.out.println("8 - Exit");
 			System.out.print("Enter your choice: ");
 			Choice = key.readLine();
 
@@ -122,14 +126,18 @@ public class Main extends Application {
 			if(Choice.equals("1")) {
 				System.out.println("Please select which data type you would like to search for:");
 				System.out.println("1 - Name \n 2 - Date \n 3 - Genre \n 4 - Rating \n 5 - Total gross \n 6 - Adjusted gross");
+				sleep(300);
+				System.out.print("Your choice: ");
 				String Choicex = key.readLine();
 
 				// Search by name
 				if(Choicex.equals("1")) {
 					System.out.print("Please enter name: ");
 					Choicex = key.readLine();
-					Search.nameSearch(movies, Choicex).toString();
+					System.out.println(Search.nameSearch(movies, Choicex));
+					//Search.nameSearch(movies, Choicex).toString();
 
+					// Main menu or exit
 					System.out.println("\n 1 - Main Menu  \n 2 - Exit");
 					Choicex = key.readLine();
 					if(Choicex.equals("1")) {
@@ -146,9 +154,11 @@ public class Main extends Application {
 				} else if(Choicex.equals("2")) {
 					System.out.print("Please enter date: ");
 					Choicex = key.readLine();
-					Search.dateSearch(movies, Choicex).toString();
+					//Search.dateSearch(movies, Choicex).toString();
+					System.out.println(Search.dateSearch(movies, Choicex));
 
 					System.out.println("\n 1 - Main Menu \n 2 - Exit");
+					System.out.print("Your choice: ");
 					Choicex = key.readLine();
 					if(Choicex.equals("1")) {
 						sleep(300);
@@ -183,7 +193,8 @@ public class Main extends Application {
 				} else if(Choicex.equals("4")) {
 					System.out.print("Please enter rating: ");
 					Choicex = key.readLine();
-					Search.ratingSearch(movies, Choicex).toString();
+					System.out.println(Search.ratingSearch(movies, Choicex));
+					//Search.ratingSearch(movies, Choicex).toString();
 
 					System.out.println("\n 1 - Main Menu \n 2 - Exit");
 					Choicex = key.readLine();
@@ -202,7 +213,8 @@ public class Main extends Application {
 					System.out.print("Please enter total gross: ");
 					Choicex = key.readLine();
 					int Choicen = Integer.parseInt(Choicex);
-					Search.totalgrossSearch(movies, Choicen).toString();
+					System.out.println(Search.totalgrossSearch(movies, Choicen));
+					//Search.totalgrossSearch(movies, Choicen).toString();
 
 					System.out.println("\n 1 - Main Menu \n 2 - Exit");
 					Choicex = key.readLine();
@@ -218,10 +230,11 @@ public class Main extends Application {
 					
 				// Search by adjusted gross
 				} else if(Choicex.equals("6")) {
-					System.out.print("Please enter total gross: ");
+					System.out.print("Please enter adjusted gross: ");
 					Choicex = key.readLine();
 					Long Choicen = Long.parseLong(Choicex);
-					Search.adjustedgrossSearch(movies, Choicen).toString();
+					System.out.println(Search.adjustedgrossSearch(movies, Choicen));
+					//Search.adjustedgrossSearch(movies, Choicen).toString();
 
 					System.out.println("\n 1 - Main Menu \n 2 - Exit");
 					Choicex = key.readLine();
@@ -255,7 +268,7 @@ public class Main extends Application {
 				String adjustedgross2s = key.readLine();
 				Long adjustedgross2 = Long.parseLong(totalgross2s);
 
-				Search.individualSearch(movies, name2, date2, genre2, rating2, totalgross2, adjustedgross2);
+				System.out.println(Search.individualSearch(movies, name2, date2, genre2, rating2, totalgross2, adjustedgross2));
 
 				System.out.println("\n 1 - Main Menu \n 2 - Exit");
 				String Choicex = key.readLine();
@@ -272,9 +285,9 @@ public class Main extends Application {
 			// Search by filters
 			} else if(Choice.equals("3")) {
 				System.out.println("Here you are able to filter the movies by genre and rating.");
-				System.out.println("Genre: ");
+				System.out.print("Genre: ");
 				String genre2 = key.readLine();
-				System.out.println("Rating: ");
+				System.out.print("Rating: ");
 				String rating2 = key.readLine();
 
 				Search.Filterdata(movies, genre2, rating2).toString();
@@ -294,10 +307,11 @@ public class Main extends Application {
 			} else if(Choice.equals("4")) {
 				System.out.println("Summary Information");
 				System.out.println("Total movies: " + movies.length);
-				System.out.println("Max total gross" + Summary.MaxValue(movies));
-				System.out.println("Min total gross" + Summary.MinValue(movies));
-				System.out.println("Average total gross" + Summary.Average(movies));
-				System.out.println("Median total gross" + Sort.Median(movies));
+				System.out.println("Max total gross: " + Summary.MaxValue(movies));
+				System.out.println("Min total gross: " + Summary.MinValue(movies));
+				System.out.println("Average total gross: " + Summary.Average(movies));
+				System.out.println("Median total gross: " + Sort.Median(movies));
+				System.out.println("Standard deviation for total gross: " + Summary.standardDeviation(movies));
 
 				System.out.println("\n 1 - Main Menu \n 2 - Exit");
 				String Choicex = key.readLine();
@@ -312,8 +326,12 @@ public class Main extends Application {
 				}
 
 			} else if(Choice.equals("5")) {
+				// Add Stuff
+
+
+			} else if(Choice.equals("6")) {
 				System.out.println("Would you like the data sorted \n 1 - low to high or 2 - high to low: ");
-				System.out.println("Your choice: ");
+				System.out.print("Your choice: ");
 				String Choicey = key.readLine();
 
 				if(Choicey.equals("1")) {
@@ -344,8 +362,8 @@ public class Main extends Application {
 				}
 
 			} else if(Choice.equals("7")) {
-				System.out.println("Which chart do you want to see \n 1 - Pie Chart \n 2 - Blank Chart \n 3 - Tableview");
-				System.out.println("Your choice: ");
+				System.out.println("Which chart do you want to see \n 1 - Bar Graph \n 2 - Line Graph \n 3 - Tableview");
+				System.out.print("Your choice: ");
 				String Choicey = key.readLine();
 
 				if(Choicey.equals("1")) {
@@ -373,7 +391,7 @@ public class Main extends Application {
 					launch(args);
 				}
 	
-			} else if(Choice.equals("Exit")) {
+			} else if(Choice.equals("8")) {
 				clearScreen();
 				System.out.println("Thank you for visiting!");
 				exit = false;
@@ -394,7 +412,6 @@ public class Main extends Application {
 		else if(Chart == 2) {
 			primaryStage.setScene(new Scene(Graphs.linechart(g2, notrated, pg2, pg132, r2)));
 		}
-
 		primaryStage.show();
 	}
 

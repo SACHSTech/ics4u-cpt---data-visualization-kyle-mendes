@@ -3,27 +3,30 @@ import java.util.ArrayList;
 
 public class Search {
     
-    public static String nameSearch(Movies[] array, String key) {
+    public static ArrayList<Movies> nameSearch(Movies[] array, String key) {
         String element;
+
+        ArrayList<Movies> matching = new ArrayList<Movies>();
 
         for(int i = 0; i < array.length; i++) {
             element = array[i].getName();
+
             if(element.equals(key)) {
-                System.out.println("Here is the result: ");
-                System.out.println(array[i].toString());
+                matching.add(array[i]);
             }
         }
 
-        return " ";
+        return matching;
     }
 
     public static String dateSearch(Movies[] array, String key) {
         String element;
 
         for(int i = 0; i < array.length; i++) {
+
             element = array[i].getDate();
+
             if(element.equals(key)) {
-                System.out.println("Here is the result: ");
                 System.out.println(array[i].toString());
             }
         }
@@ -31,53 +34,60 @@ public class Search {
         return " ";
     }
 
-    public static ArrayList<Movies> genreSearch(Movies[] array, String key) {
+    public static String genreSearch(Movies[] array, String key) {
         String element;
-        ArrayList<Movies> matching = new ArrayList<Movies>();
 
         for(int i = 0; i < array.length; i++) {
+
             element = array[i].getGenre();
+
             if(element.equals(key)) {
-                matching.add(array[i]);
+                System.out.println(array[i].toString());
             }
         }
 
-        return matching;
+        return " ";
     }
 
-    public static ArrayList<Movies> ratingSearch(Movies[] array, String key) {
+    public static String ratingSearch(Movies[] array, String key) {
         String element;
-        ArrayList<Movies> matching = new ArrayList<Movies>();
 
         for(int i = 0; i < array.length; i++) {
+
             element = array[i].getRating();
+
             if(element.equals(key)) {
-                matching.add(array[i]);
+                System.out.println(array[i].toString());
             }
         }
 
-        return matching;
+        return " ";
     }
 
-    public static String totalgrossSearch(Movies[] array, int key) {
+    public static ArrayList<Movies> totalgrossSearch(Movies[] array, int key) {
         int element;
+
+        ArrayList<Movies> matching = new ArrayList<Movies>();
 
         for(int i = 0; i < array.length; i++) {
             element = array[i].getTotalgross();
-            if(element == key) {
-                System.out.println(array[i].toString());
+
+            if(element == (key)) {
+                matching.add(array[i]);
             }
         }
 
-        return " ";
+        return matching;
     }
 
     public static String adjustedgrossSearch(Movies[] array, Long key) {
         Long element;
 
         for(int i = 0; i < array.length; i++) {
-            element = (Long)array[i].getAdjustedgross();
-            if(element == key) {
+
+            element = array[i].getAdjustedgross();
+
+            if(element.equals(key)) {
                 System.out.println(array[i].toString());
             }
         }
@@ -85,13 +95,13 @@ public class Search {
         return " ";
     }
 
-    public static String individualSearch(Movies[] array, String name, String date, String genre, String rating, int totalgross, long adjustedgross) {
+    public static String individualSearch(Movies[] array, String name, String date, String genre, String rating, int totalgross, Long adjustedgross) {
         String thename;
         String thedate;
         String thegenre;
         String therating;
         int thetotalgross;
-        long theadjustedgross;
+        Long theadjustedgross;
 
         for(int i = 0; i < array.length; i++) {
             thename = array[i].getName();
@@ -106,7 +116,7 @@ public class Search {
             } 
         }
 
-        return " "; 
+        return "Invalid"; 
 
     } 
 

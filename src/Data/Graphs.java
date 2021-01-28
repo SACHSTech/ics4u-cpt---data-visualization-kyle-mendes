@@ -8,6 +8,8 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.chart.PieChart;
+
 
 public class Graphs {
 
@@ -20,7 +22,7 @@ public class Graphs {
         String[] genres = {"Action", "Adventure", "Black Comedy", "Comedy", "Drama", "Horror", "Musical", "Rom Com", "Thriller/Suspense", "Western"};
         xAxis = new CategoryAxis();
         xAxis.setCategories(FXCollections.<String>observableArrayList(genres));
-        yAxis = new NumberAxis("Total Gross", 0.0, 1000000000.0, 500000000.0);
+        yAxis = new NumberAxis("Total Gross", 0.0, 140000000, 10000000.0);
 
         ObservableList<BarChart.Series> barChartData = 
             FXCollections.observableArrayList (
@@ -51,7 +53,7 @@ public class Graphs {
 
     public static Parent linechart(double g2, double notrated, double pg2, double pg132, double r2) {
         xAxis2 = new CategoryAxis();
-        yAxis2 = new NumberAxis("Average Total Gross", 0.0, 1000000000.0, 500000000.0);
+        yAxis2 = new NumberAxis("Average Total Gross", 0.0, 100000000.0, 10000000.0);
         chart2 = new LineChart<>(xAxis2, yAxis2);
         chart2.setTitle("Line hart for MPA Rating vs Average total gross");
         xAxis2.setLabel("MPA Rating");
@@ -64,12 +66,11 @@ public class Graphs {
         series.getData().add(new XYChart.Data<String, Number>(ratings[2], pg2));
         series.getData().add(new XYChart.Data<String, Number>(ratings[3], pg132));
         series.getData().add(new XYChart.Data<String, Number>(ratings[4], r2));
-        chart.getData().add(series);
+        chart2.getData().add(series);
 
         return chart2;
         
     }
-
 
     
 }
