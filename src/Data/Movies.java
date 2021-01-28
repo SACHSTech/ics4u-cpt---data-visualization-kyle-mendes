@@ -1,6 +1,8 @@
 package Data;
 
 public class Movies {
+
+    // initalize the variables
     private String name; 
     private String date; 
     private String genre;
@@ -8,6 +10,7 @@ public class Movies {
     private int totalgross; 
     private long adjustedgross;
 
+    // create the constructor
     public Movies(String thename, String thedate, String thegenre, String therating, int thetotalgross, long theadjustedgross){
         this.name = thename;
         this.date = thedate;

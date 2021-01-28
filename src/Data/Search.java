@@ -1,7 +1,10 @@
 package Data;
+
+// import items i need
 import java.util.ArrayList;
 
 public class Search {
+    
     
     public static ArrayList<Movies> nameSearch(Movies[] array, String key) {
         String element;
@@ -111,12 +114,12 @@ public class Search {
             thetotalgross = array[i].getTotalgross();
             theadjustedgross = array[i].getAdjustedgross();
 
-            if(thename.equals(name) && thedate.equals(date) && thegenre.equals(genre) && therating.equals(rating) && (thetotalgross == totalgross) && (theadjustedgross == adjustedgross)) {
+            if(thename.equals(name) && thedate.equals(date) && thegenre.equals(genre) && therating.equals(rating) && (thetotalgross == totalgross) && (theadjustedgross.equals(adjustedgross))) {
                 System.out.println(array[i].toString());
             } 
         }
 
-        return "Invalid"; 
+        return " "; 
 
     } 
 

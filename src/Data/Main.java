@@ -266,7 +266,7 @@ public class Main extends Application {
 				int totalgross2 = Integer.parseInt(totalgross2s);
 				System.out.print("Adjusted gross: ");
 				String adjustedgross2s = key.readLine();
-				Long adjustedgross2 = Long.parseLong(totalgross2s);
+				Long adjustedgross2 = Long.parseLong(adjustedgross2s);
 
 				System.out.println(Search.individualSearch(movies, name2, date2, genre2, rating2, totalgross2, adjustedgross2));
 
