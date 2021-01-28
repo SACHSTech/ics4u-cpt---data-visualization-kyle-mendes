@@ -36,6 +36,18 @@ public class Main extends Application {
 	static double r2;
 
 	// pie chart
+	static int action3;
+	static int adventure3;
+	static int bcom3;
+	static int comedy3;
+	static int concert3;
+	static int doc3;
+	static int drama3;
+	static int horror3;
+	static int musical3;
+	static int romcom3;
+	static int thriller3;
+	static int western3;
 
 	// method to clear the screen
 	public static void clearScreen() {  
@@ -385,7 +397,7 @@ public class Main extends Application {
 
 			// View charts
 			} else if (Choice.equals("7")) {
-				System.out.println("Which chart do you want to see \n 1 - Bar Graph \n 2 - Line Graph \n 3 - Tableview");
+				System.out.println("Which chart do you want to see \n 1 - Bar Graph \n 2 - Line Graph \n 3 - Pie Chart");
 				System.out.print("Your choice: ");
 				String Choicey = key.readLine();
 
@@ -404,6 +416,7 @@ public class Main extends Application {
 
 					Chart = 1;
 					launch(args);
+			
 
 				// View linechart
 				} else if (Choicey.equals("2")) {
@@ -416,6 +429,28 @@ public class Main extends Application {
 					Chart = 2;
 					launch(args);
 				}
+				
+				// View piechart
+				else if (Choicey.equals("3")) {
+					action3 = Summary.countGenre(movies, "Action");
+					adventure3 = Summary.countGenre(movies, "Adventure");
+					bcom3 = Summary.countGenre(movies, "Black Comedy");
+					comedy3 = Summary.countGenre(movies, "Comedy");
+					concert3 = Summary.countGenre(movies, "Concert/Performance");
+					doc3 = Summary.countGenre(movies, "Documentary");
+					drama3 = Summary.countGenre(movies, "Drama");
+					horror3 = Summary.countGenre(movies, "Horror");
+					musical3 = Summary.countGenre(movies, "Musical");
+					romcom3 = Summary.countGenre(movies, "Romantic Comedy");
+					thriller3 = Summary.countGenre(movies, "Thriller/Suspense");
+					western3 = Summary.countGenre(movies, "Western");
+
+					Chart = 3;
+					launch(args);
+					
+				}
+			
+				
 	
 			} else if (Choice.equals("8")) {
 				clearScreen();
@@ -437,6 +472,11 @@ public class Main extends Application {
 
 		else if(Chart == 2) {
 			primaryStage.setScene(new Scene(Graphs.linechart(g2, notrated, pg2, pg132, r2)));
+				
+		}
+
+		else if (Chart == 3) {
+			primaryStage.setScene(new Scene(Graphs.piechart(action3, adventure3, bcom3, comedy3, concert3, doc3, drama3, horror3, musical3, romcom3, thriller3, western3)));
 		}
 		primaryStage.show();
 	}

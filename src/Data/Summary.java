@@ -136,5 +136,21 @@ public class Summary {
         finalanswer = (long) answer;
         return finalanswer;
     }
+
+    public static int countGenre(Movies[] array, String genrekey) {
+        String element;
+        int Count = 0;
+
+        for(int i = 0; i < array.length; i++) {
+
+            element = array[i].getGenre();
+
+            if(element.equals(genrekey)) {
+                Count++;
+            }
+        }
+
+        return Count;
+    }
     
 }
