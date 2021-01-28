@@ -1,21 +1,30 @@
 package Data;
 
 public class Sort {
-    
+
+    /**
+    * Sorts the data from lowest to highest total gross 
+    * @param array - the movie array 
+    * @return the sorted array
+    */    
     public static Movies[] sortMin(Movies[] array) {
 
+        // Initialize the variable
         int currentMinIndex;
 
-        for(int i = 0; i < array.length - 1; i++) {
+        // Start the sorting
+        for (int i = 0; i < array.length - 1; i++) {
             currentMinIndex = i;
 
-            for(int j = i + 1; j < array.length; j++) {
-                if(array[j].getTotalgross() < array[currentMinIndex].getTotalgross()) {
+            // Find the index of the min of the unsorted list
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j].getTotalgross() < array[currentMinIndex].getTotalgross()) {
                     currentMinIndex = j;
                 }
             }
             
-            if(i != currentMinIndex) {
+            // Swap numbers if needed
+            if (i != currentMinIndex) {
                 Movies temp = array[currentMinIndex];
                 array[currentMinIndex] = array[i];
                 array[i] = temp;
@@ -26,20 +35,28 @@ public class Sort {
 
     }
 
+    /**
+    * Sorts the data from highest to lowest total gross 
+    * @param array - the movie array 
+    * @return the sorted array
+    */
     public static Movies[] sortMax(Movies[] array) {
 
+        // Initialize the variable
         int currentMinIndex;
 
-        for(int i = 0; i < array.length - 1; i++) {
+        // Find the index of the max of the unsorted list
+        for (int i = 0; i < array.length - 1; i++) {
             currentMinIndex = i;
 
-            for(int j = i + 1; j < array.length; j++) {
-                if(array[j].getTotalgross() > array[currentMinIndex].getTotalgross()) {
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j].getTotalgross() > array[currentMinIndex].getTotalgross()) {
                     currentMinIndex = j;
                 }
             }
             
-            if(i != currentMinIndex) {
+            // Swap numbers if needed
+            if (i != currentMinIndex) {
                 Movies temp = array[currentMinIndex];
                 array[currentMinIndex] = array[i];
                 array[i] = temp;
@@ -50,7 +67,14 @@ public class Sort {
         return array;
     }
 
+    /**
+    * Gets the median total gross of the data set 
+    * @param array - the movie array 
+    * @return the median total gross
+    */
     public static Long Median(Movies[] array) {
+
+        // Initialize the variable
         int number = array.length; 
         int ii;
         int i;
@@ -59,9 +83,11 @@ public class Sort {
         double gross2;
         Long finalmedian;
 
+        // Sorts the array
         sortMin(array);
 
-        if(number % 2 == 0) {
+        // Check if number is even or odd
+        if (number % 2 == 0) {
             i = number / 2;
             ii = i + 1;
 
@@ -69,16 +95,18 @@ public class Sort {
             gross2 = (array[ii].getTotalgross());
 
             median = (gross + gross2) / 2;
-
-        } else {
+        } 
+        
+        else {
             number = Math.round(number / 2);
             i = (int)number;
             median = array[i].getTotalgross();
         }
+
+        // Convert int to long
         finalmedian = (long) median;
 
         return finalmedian;
     }
-
 
 }
