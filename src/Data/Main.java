@@ -88,7 +88,7 @@ public class Main extends Application {
 		BufferedReader key = new BufferedReader(new InputStreamReader(System.in));
 
 		// read all the data
-		while(count < 513) {
+		while (count < 513) {
 			line = thefile.readLine();
 			String[] space = line.split(",");
 
@@ -126,10 +126,9 @@ public class Main extends Application {
 			System.out.println("2 - View an individual movie");
 			System.out.println("3 - View filtered data by genre and rating");
 			System.out.println("4 - View summary of data");
-			System.out.println("5 - View average total gross based on genre or rating");
-			System.out.println("6 - View data sorted by total gross");
-			System.out.println("7 - View charts");
-			System.out.println("8 - Exit");
+			System.out.println("5 - View data sorted by total gross");
+			System.out.println("6 - View charts");
+			System.out.println("7 - Exit");
 			System.out.print("Enter your choice: ");
 			Choice = key.readLine();
 
@@ -183,7 +182,7 @@ public class Main extends Application {
 						System.out.println("Thank you for visiting!");
 						exit = false;
 					}
-					
+						
 				// Search by genre
 				} else if (Choicex.equals("3")) {
 					System.out.print("Please enter genre: ");
@@ -354,12 +353,8 @@ public class Main extends Application {
 					exit = false;
 				}
 
-			} else if (Choice.equals("5")) {
-				// Add Stuff
-
-
 			// View sorted data
-			} else if (Choice.equals("6")) {
+			} else if (Choice.equals("5")) {
 				System.out.println("Would you like the data sorted \n 1 - low to high or 2 - high to low: ");
 				System.out.print("Your choice: ");
 				String Choicey = key.readLine();
@@ -396,7 +391,7 @@ public class Main extends Application {
 				}
 
 			// View charts
-			} else if (Choice.equals("7")) {
+			} else if (Choice.equals("6")) {
 				System.out.println("Which chart do you want to see \n 1 - Bar Graph \n 2 - Line Graph \n 3 - Pie Chart");
 				System.out.print("Your choice: ");
 				String Choicey = key.readLine();
@@ -452,7 +447,7 @@ public class Main extends Application {
 			
 				
 	
-			} else if (Choice.equals("8")) {
+			} else if (Choice.equals("7")) {
 				clearScreen();
 				System.out.println("Thank you for visiting!");
 				exit = false;
