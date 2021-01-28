@@ -5,7 +5,12 @@ import java.util.ArrayList;
 
 public class Search {
     
-    
+    /**
+    * Search for the movie name in the dataset
+    * @param array - the movie array 
+    * @param key - the name of the movie
+    * @return the array list with the movie  
+    */
     public static ArrayList<Movies> nameSearch(Movies[] array, String key) {
         String element;
 
@@ -22,6 +27,12 @@ public class Search {
         return matching;
     }
 
+    /**
+    * Search for the movie date in the dataset
+    * @param array - the movie array 
+    * @param key - the date of the movie
+    * @return a line  
+    */
     public static String dateSearch(Movies[] array, String key) {
         String element;
 
@@ -37,6 +48,12 @@ public class Search {
         return " ";
     }
 
+    /**
+    * Search for the movie genre in the dataset
+    * @param array - the movie array 
+    * @param key - the genre of the movie
+    * @return a line  
+    */
     public static String genreSearch(Movies[] array, String key) {
         String element;
 
@@ -52,6 +69,12 @@ public class Search {
         return " ";
     }
 
+    /**
+    * Search for the movie mpa rating in the dataset
+    * @param array - the movie array 
+    * @param key - the mpa rating of the movie
+    * @return a line  
+    */
     public static String ratingSearch(Movies[] array, String key) {
         String element;
 
@@ -67,6 +90,12 @@ public class Search {
         return " ";
     }
 
+    /**
+    * Search for the movie total gross in the dataset
+    * @param array - the movie array 
+    * @param key - the total gross of the movie
+    * @return the array list with the movies  
+    */
     public static ArrayList<Movies> totalgrossSearch(Movies[] array, int key) {
         int element;
 
@@ -83,6 +112,12 @@ public class Search {
         return matching;
     }
 
+    /**
+    * Search for the movie adjusted gross in the dataset
+    * @param array - the movie array 
+    * @param key - the adjusted gross of the movie
+    * @return a line  
+    */
     public static String adjustedgrossSearch(Movies[] array, Long key) {
         Long element;
 
@@ -98,6 +133,17 @@ public class Search {
         return " ";
     }
 
+    /**
+    * Searchs for an individual movie
+    * @param array - the movie array 
+    * @param name - the movie name
+    * @param date - the date 
+    * @param rating - the mpa rating
+    * @param genre - the genre
+    * @param totalgross - total gross
+    * @param adjustedgross - the adjusted gross
+    * @return a line
+    */
     public static String individualSearch(Movies[] array, String name, String date, String genre, String rating, int totalgross, Long adjustedgross) {
         String thename;
         String thedate;
@@ -123,6 +169,13 @@ public class Search {
 
     } 
 
+    /**
+    * Searchs for movies that have specific filters
+    * @param array - the movie array 
+    * @param key - the genre
+    * @param rating - the mpa rating
+    * @return a line  
+    */
     public static String Filterdata(Movies[] array, String genre, String rating) {
         String thegenre;
         String therating;
