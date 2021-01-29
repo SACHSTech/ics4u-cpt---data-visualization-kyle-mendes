@@ -9,8 +9,10 @@ public class Summary {
     */
     public static Long MaxValue(Movies[] array) {
         
+        // Initialize the variable
         Long maxValue = (long) array[1].getTotalgross();
 
+        // Go through whole array
         for (int i = 0; i < array.length; i++) {
             if (array[i].getTotalgross() > maxValue) {
                 maxValue = (long) array[i].getTotalgross();
@@ -26,8 +28,11 @@ public class Summary {
     * @return the min total gross
     */
     public static int MinValue(Movies[] array) {
+        
+        // Initialize the variable
         int minValue = array[1].getTotalgross();
 
+        // Go through whole array
         for (int i = 0; i < array.length; i++) {
             if (array[i].getTotalgross() < minValue) {
                 minValue = array[i].getTotalgross();
@@ -48,6 +53,7 @@ public class Summary {
         double average = 0;
         Long finalaverage;
 
+        // Go through whole array
         for (int i = 0; i < array.length; i++) {
             average = average + array[i].getTotalgross();
         }
