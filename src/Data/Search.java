@@ -14,8 +14,10 @@ public class Search {
     public static ArrayList<Movies> nameSearch(Movies[] array, String key) {
         String element;
 
+        // Create array list
         ArrayList<Movies> matching = new ArrayList<Movies>();
 
+        // Check the data
         for(int i = 0; i < array.length; i++) {
             element = array[i].getName();
 
@@ -36,6 +38,7 @@ public class Search {
     public static String dateSearch(Movies[] array, String key) {
         String element;
 
+        // Check whole data set
         for(int i = 0; i < array.length; i++) {
 
             element = array[i].getDate();
@@ -57,6 +60,7 @@ public class Search {
     public static String genreSearch(Movies[] array, String key) {
         String element;
 
+        // Check whole data set
         for(int i = 0; i < array.length; i++) {
 
             element = array[i].getGenre();
@@ -78,6 +82,7 @@ public class Search {
     public static String ratingSearch(Movies[] array, String key) {
         String element;
 
+        // Check whole data set
         for(int i = 0; i < array.length; i++) {
 
             element = array[i].getRating();
@@ -99,8 +104,10 @@ public class Search {
     public static ArrayList<Movies> totalgrossSearch(Movies[] array, int key) {
         int element;
 
+        // Create array list
         ArrayList<Movies> matching = new ArrayList<Movies>();
 
+        // Check whole data set
         for(int i = 0; i < array.length; i++) {
             element = array[i].getTotalgross();
 
@@ -121,6 +128,7 @@ public class Search {
     public static String adjustedgrossSearch(Movies[] array, Long key) {
         Long element;
 
+        // Check whole data set
         for(int i = 0; i < array.length; i++) {
 
             element = array[i].getAdjustedgross();
@@ -152,6 +160,7 @@ public class Search {
         int thetotalgross;
         Long theadjustedgross;
 
+        // Check whole data set
         for(int i = 0; i < array.length; i++) {
             thename = array[i].getName();
             thedate = array[i].getDate();
@@ -180,6 +189,7 @@ public class Search {
         String thegenre;
         String therating;
 
+        // Check whole data set
         for(int i = 0; i < array.length; i++) {
             thegenre = array[i].getGenre();
             therating = array[i].getRating();
